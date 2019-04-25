@@ -1,0 +1,249 @@
+@import url('https://stockfont.org/?56b34081ad8434c7f2a863394af4cf884c9f1fcbd4cd77c621c120a9c9632a3e');
+
+* {margin: 0; padding: 0;}
+body {background-color: #DEDEDE; font-family: 'Oxygen-Regular';
+	display: grid;
+  grid-template-columns: 10% 70% 20%;
+    grid-template-rows: auto;
+	grid-template-areas: "header header header"
+	"img img aside"
+	"main main aside"
+	"footer footer footer";
+}
+
+h1 { font-family: 'Audiowide', cursive; margin: 0.4em;}
+aside h1 a {color: white;}
+header h1:before {content: "\1F5B3"; font-family: 'hack'; padding-right: 0.4em;}
+header h1 {color: #92B2BF; text-shadow: 2px 2px 2px darkgreen;}
+
+body > section {grid-area: img; height: 20vh; background-position: center center;
+	background-image: url(images/randombanner.php);
+	max-height: 300px;
+	background-position: center center;}
+header a { color: white; text-decoration: none; }
+
+header address {float: right; color: white; font-style: normal; padding: 1em;}
+main {min-height: 60vh; grid-area: main; padding: 5vw; background-color: white; padding-top: 2vw;}
+
+
+header {background-color: #1C2524; grid-area: header;}
+
+main h1, main a {color: #92B2BF;}
+aside {background-color: #2A3F52; min-height: 20px; grid-area: aside; padding: 1vw; color: white;}
+aside ul {list-style-type: none; margin-bottom: 1em;}
+aside li {padding-left: 20px;}
+aside > ul > li {font-size: 2em;}
+aside > ul > li > ul {font-size: 0.5em;}
+aside a {color: #333; text-decoration: none}
+footer {color: white; padding: 1em; background-color: black; font-size: 0.7em; grid-area: footer;}
+
+header { display: grid;  grid-template-columns: 10% 80% 10%;}
+header ul {align-self: center; display: grid; grid-template-columns: auto auto auto; grid-template-rows: auto; color: white; list-style-type: none;}
+/* Changed font size to 1.5em */
+header > ul > li {font-size: 1.5em; cursor: pointer; text-align: center;}
+header ul li ul { margin-left: 10vw; text-align: left; display: none; position: absolute; background-color: #333; padding: 10px;}
+header ul li ul li {padding: 0.2vw; transition: background-color .3s;}
+header ul li:hover ul {display: block;}
+header ul li:hover ul li:hover{background-color: #111;}
+
+
+h1 {font-weight: bold; margin-bottom: 1em;}
+
+p {margin-top: 0.5em; margin-bottom: 0.5em;}
+
+h2 {margin-top: 0.5em;  margin-bottom: 0.5em;}
+form label, form input, form textarea {margin-top: 1em; margin-bottom: 1em ;box-sizing: border-box;  display: block; width: 46%; padding: 2%; float: left;}
+form label{clear: both;}
+form textarea {height: 200px; max-width: 500px; max-height: 500px; min-width: 350px; min-height: 150px;}
+form input[type="submit"], form p {margin-left: 46%;}
+form {overflow: auto; border: 5px ridge rgba(0,120,255,0.8); padding-top: 50px; padding-bottom: 50px;}
+
+.products, .reviews {list-style-type: none; }
+.products li, .reviews li {padding: 2em; background: rgba(0,100,255,0.1); transition: .2s;}
+.products li:nth-child(odd), .reviews li:nth-child(odd) {background-color: #fff;}
+.products li:nth-child(even), .products li:nth-child(even) {}
+.products a{text-decoration: none; color: black;}
+.products li:hover{
+	box-shadow: 5px 5px 20px grey;
+	z-index: 100;
+	border: none;
+	transform: translateY(-10px);
+}
+.price { text-align: right; color: darkgreen; font-family: 'Audiowide'; font-weight: bold; font-size: 2em;}
+
+.reviews .details {text-align: right;}
+
+h4 {margin-top: 1em; margin-bottom: 1em;}
+
+
+/* SELF ADDED CSS */
+
+.recentContainer{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	background: white;
+}
+.recentContainer a{
+	text-decoration: none;
+	color: black;
+}
+
+.containerProduct{
+	text-align: center;
+	padding: 10px;
+	width: 30%;
+	padding-left: 30px;
+	transition: .2s;
+}
+
+.containerProduct:hover{
+	border: none;
+	box-shadow: 3px 3px 20px grey;
+}
+
+.second{
+	background: rgba(0,100,250,0.1);
+}
+
+.containerProduct p a{
+	color: darkgreen;
+	font-family: 'Audiowide';
+	font-weight: bold;
+	font-size: 2em;
+}
+
+
+.containerProduct p{
+	font-size: 10px;
+}
+
+.containerProduct img{
+	width: 250px;
+	height: 250px;
+}
+
+#search{
+	text-align: left;
+}
+
+#search form{
+	padding: 0;
+	border: none;
+}
+#search form input{
+	margin: 0;
+	padding: 0;
+	width: 0;
+	height: 0;
+}
+
+#search form input[type=text]{
+	margin-left: 50px;
+	width: 0px;
+	height: 35px;
+	padding-left: 35px;
+	background: url(../Admin/images/magnifier.png) no-repeat scroll 7px 7px white;
+	transition: .4s;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border: 3px groove black;
+
+}
+
+#search form input[type=submit]{
+	opacity: 0;
+	display: none;
+	transition: .4s;
+	margin-top: 0;
+	width: 75px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	height: 35px;
+	background: tomato;
+	border: 3px groove black;
+	border-left: 0px;
+	color: white;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.rating{
+	margin-top: 30px;
+	display: flex;
+	flex-direction: row;
+}
+.rating label{
+	display: inline;
+	margin: 0;
+	padding: 0;
+	width: 10%;
+}
+.rating input{
+	padding: 0;
+	margin: 0;
+	display: inline;
+	width: 30px;
+}
+
+.rating input[type=radio]{
+	border: none;
+}
+
+
+/* Avatar */
+.avatar{
+	width: 65px;
+	color: white;
+	font-family: sans-serif;
+	font-size: 25px;
+	font-weight: bold;
+	background: DarkOrchid;
+	height: 48px;
+	text-align: center;
+	padding-top: 17px;
+	display: inline-block;
+	float: left;
+	margin-right: 10px;
+}
+
+
+.cartTable table {
+	border: 1px solid olive;
+	width: 95%;
+	margin-left: 15px;
+}
+
+.cartTable th{
+	background-color: #4d8000;
+	color: white;
+}
+
+.cartTable td, th {
+  border: 2px solid rgba(0,100,250, 0.05);
+  text-align: left;
+  padding: 8px;
+}
+
+.cartTable tr:nth-child(even) {
+  background-color: #ebffcc;
+}
+
+
+.checkoutButton{
+	border: 5px ridge #933EC5;
+	display: inline-block;
+	padding: 13px;
+	padding-bottom: 0px;
+	border-radius: 30px;
+	transition: .2s;
+	background: #ffffe6;
+}
+
+.checkoutButton:hover{
+	transform: translateY(-3px);
+}
+
+.checkoutButton:active{
+	transform: translateY(0px);
+}
